@@ -93,22 +93,17 @@ extension HomeView {
         return Button(action: {
             switch option {
             case .alle:
-                // "Alle" durumu için yapılacak işlemler
                 withAnimation {
                     showAllProducts = true
                 }
-                print("Alle seçildi")
             case .verfügbar:
                 withAnimation {
                     showAllProducts = false
                     showAvailabelProducts = true
 
                 }
-                // "Verfügbar" durumu için yapılacak işlemler
-                print("Verfügbar seçildi")
             case .vorgemerkt:
-                // "Vorgemerkt" durumu için yapılacak işlemler
-                print("Vorgemerkt seçildi")
+                print("Vorgemerkt picked")
             }
         }) {
             Text(option.rawValue)

@@ -28,7 +28,6 @@ final class ProductService {
             .sink(receiveCompletion: networking.handleCompletion,
                   receiveValue: { [weak self] returnProduct in
                 self?.allProducts.append(returnProduct)
-//                print(self?.allProducts)
                 self?.productSubscription?.cancel()
             })
     }

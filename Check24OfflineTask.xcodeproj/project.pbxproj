@@ -23,7 +23,7 @@
 		DD88B12A2B9C997D00C99408 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B1292B9C997D00C99408 /* WebView.swift */; };
 		DD88B12E2B9CA3B800C99408 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B12D2B9CA3B800C99408 /* DetailView.swift */; };
 		DD88B1302B9CA50700C99408 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B12F2B9CA50700C99408 /* ProductImageView.swift */; };
-		DD88B1332B9CAE1000C99408 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B1322B9CAE1000C99408 /* DetailViewModel.swift */; };
+		DD88B1362B9CC45300C99408 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B1352B9CC45300C99408 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		DD88B1292B9C997D00C99408 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		DD88B12D2B9CA3B800C99408 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		DD88B12F2B9CA50700C99408 /* ProductImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageView.swift; sourceTree = "<group>"; };
-		DD88B1322B9CAE1000C99408 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		DD88B1352B9CC45300C99408 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +182,7 @@
 		DD88B12B2B9CA31C00C99408 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				DD88B1312B9CAE0300C99408 /* ViewModel */,
+				DD88B1342B9CC42C00C99408 /* ViewModel */,
 				DD88B12C2B9CA3A500C99408 /* View */,
 			);
 			path = Detail;
@@ -196,10 +196,10 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DD88B1312B9CAE0300C99408 /* ViewModel */ = {
+		DD88B1342B9CC42C00C99408 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				DD88B1322B9CAE1000C99408 /* DetailViewModel.swift */,
+				DD88B1352B9CC45300C99408 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 				DD704DD32B9C5ECE005EFDD6 /* Check24OfflineTaskApp.swift in Sources */,
 				DD88B12A2B9C997D00C99408 /* WebView.swift in Sources */,
 				DD88B1272B9C96F900C99408 /* Color+Extension.swift in Sources */,
-				DD88B1332B9CAE1000C99408 /* DetailViewModel.swift in Sources */,
+				DD88B1362B9CC45300C99408 /* DetailViewModel.swift in Sources */,
 				DD88B1212B9C7F8500C99408 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
