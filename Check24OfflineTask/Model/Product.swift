@@ -20,11 +20,11 @@ struct Header: Codable {
 }
 
 // MARK: - ProductElement
-struct ProductElement: Codable {
+struct ProductElement: Identifiable, Codable {
     let name: String?
     let type: TypeEnum?
     let id: Int?
-    let color: Color?
+    let color: Colour?
     let imageURL: String?
     let colorCode: ColorCode?
     let available: Bool?
@@ -34,7 +34,7 @@ struct ProductElement: Codable {
     let price: Price?
 }
 
-enum Color: String, Codable {
+enum Colour: String, Codable {
     case blue = "Blue"
     case green = "Green"
     case red = "Red"
@@ -51,11 +51,7 @@ enum ColorCode: String, Codable {
 // MARK: - Price
 struct Price: Codable {
     let value: Double?
-    let currency: Currency?
-}
-
-enum Currency: String, Codable {
-    case eur = "EUR"
+    let currency: String?
 }
 
 enum TypeEnum: String, Codable {

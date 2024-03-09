@@ -27,8 +27,8 @@ final class ProductService {
             .decode(type: Product.self, decoder: JSONDecoder())
             .sink(receiveCompletion: networking.handleCompletion,
                   receiveValue: { [weak self] returnProduct in
-                self?.allProducts.append(returnProduct)
-                print(self?.allProducts)
+                self?.allProducts.append(returnProduct)
+//                print(self?.allProducts)
                 self?.productSubscription?.cancel()
             })
     }
