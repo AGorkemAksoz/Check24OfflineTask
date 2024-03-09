@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    private var service: ProductService = ProductService(networking: NetworkingManager())
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
+        }
+        .onAppear {
+            service.getProducts()
         }
         .padding()
     }

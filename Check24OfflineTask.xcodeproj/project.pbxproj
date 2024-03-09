@@ -11,6 +11,10 @@
 		DD704DD52B9C5ECE005EFDD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD704DD42B9C5ECE005EFDD6 /* ContentView.swift */; };
 		DD704DD72B9C5ECF005EFDD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD704DD62B9C5ECF005EFDD6 /* Assets.xcassets */; };
 		DD704DDA2B9C5ECF005EFDD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD704DD92B9C5ECF005EFDD6 /* Preview Assets.xcassets */; };
+		DD704DE22B9C6358005EFDD6 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD704DE12B9C6358005EFDD6 /* NetworkingManager.swift */; };
+		DD704DE52B9C6568005EFDD6 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD704DE42B9C6568005EFDD6 /* ProductService.swift */; };
+		DD704DE82B9C66B8005EFDD6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD704DE72B9C66B8005EFDD6 /* Product.swift */; };
+		DD704DEF2B9C6C80005EFDD6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD704DEE2B9C6C80005EFDD6 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,11 @@
 		DD704DD42B9C5ECE005EFDD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD704DD62B9C5ECF005EFDD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD704DD92B9C5ECF005EFDD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DD704DE12B9C6358005EFDD6 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		DD704DE42B9C6568005EFDD6 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		DD704DE72B9C66B8005EFDD6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		DD704DE92B9C69E5005EFDD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DD704DEE2B9C6C80005EFDD6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,11 @@
 		DD704DD12B9C5ECE005EFDD6 /* Check24OfflineTask */ = {
 			isa = PBXGroup;
 			children = (
+				DD704DEA2B9C6C4D005EFDD6 /* Core */,
+				DD704DE92B9C69E5005EFDD6 /* Info.plist */,
+				DD704DE62B9C66B2005EFDD6 /* Model */,
+				DD704DE32B9C6553005EFDD6 /* Services */,
+				DD704DE02B9C6348005EFDD6 /* Utilities */,
 				DD704DD22B9C5ECE005EFDD6 /* Check24OfflineTaskApp.swift */,
 				DD704DD42B9C5ECE005EFDD6 /* ContentView.swift */,
 				DD704DD62B9C5ECF005EFDD6 /* Assets.xcassets */,
@@ -65,6 +79,62 @@
 				DD704DD92B9C5ECF005EFDD6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DD704DE02B9C6348005EFDD6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DD704DE12B9C6358005EFDD6 /* NetworkingManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		DD704DE32B9C6553005EFDD6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DD704DE42B9C6568005EFDD6 /* ProductService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DD704DE62B9C66B2005EFDD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DD704DE72B9C66B8005EFDD6 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DD704DEA2B9C6C4D005EFDD6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DD704DEB2B9C6C69005EFDD6 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DD704DEB2B9C6C69005EFDD6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DD704DED2B9C6C70005EFDD6 /* ViewModel */,
+				DD704DEC2B9C6C6E005EFDD6 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DD704DEC2B9C6C6E005EFDD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD704DED2B9C6C70005EFDD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD704DEE2B9C6C80005EFDD6 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD704DE22B9C6358005EFDD6 /* NetworkingManager.swift in Sources */,
+				DD704DEF2B9C6C80005EFDD6 /* HomeViewModel.swift in Sources */,
+				DD704DE52B9C6568005EFDD6 /* ProductService.swift in Sources */,
+				DD704DE82B9C66B8005EFDD6 /* Product.swift in Sources */,
 				DD704DD52B9C5ECE005EFDD6 /* ContentView.swift in Sources */,
 				DD704DD32B9C5ECE005EFDD6 /* Check24OfflineTaskApp.swift in Sources */,
 			);
@@ -270,6 +344,7 @@
 				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Check24OfflineTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +374,7 @@
 				DEVELOPMENT_TEAM = DC2CCCCLGJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Check24OfflineTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
