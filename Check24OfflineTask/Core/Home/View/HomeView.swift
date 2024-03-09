@@ -34,6 +34,7 @@ struct HomeView: View {
                         allAvailabelProductsList
                             .transition(.move(edge: .trailing))
                     }
+                    filterSection
                     footer
                 }
                 .padding()
