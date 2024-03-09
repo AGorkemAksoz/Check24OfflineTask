@@ -21,6 +21,9 @@
 		DD88B1252B9C8FEE00C99408 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B1242B9C8FEE00C99408 /* StarRatingView.swift */; };
 		DD88B1272B9C96F900C99408 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B1262B9C96F900C99408 /* Color+Extension.swift */; };
 		DD88B12A2B9C997D00C99408 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B1292B9C997D00C99408 /* WebView.swift */; };
+		DD88B12E2B9CA3B800C99408 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B12D2B9CA3B800C99408 /* DetailView.swift */; };
+		DD88B1302B9CA50700C99408 /* ProductImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B12F2B9CA50700C99408 /* ProductImageView.swift */; };
+		DD88B1332B9CAE1000C99408 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD88B1322B9CAE1000C99408 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		DD88B1242B9C8FEE00C99408 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		DD88B1262B9C96F900C99408 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		DD88B1292B9C997D00C99408 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		DD88B12D2B9CA3B800C99408 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		DD88B12F2B9CA50700C99408 /* ProductImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageView.swift; sourceTree = "<group>"; };
+		DD88B1322B9CAE1000C99408 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,7 @@
 			children = (
 				DD88B1292B9C997D00C99408 /* WebView.swift */,
 				DD88B1242B9C8FEE00C99408 /* StarRatingView.swift */,
+				DD88B12F2B9CA50700C99408 /* ProductImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,8 +182,26 @@
 		DD88B12B2B9CA31C00C99408 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				DD88B1312B9CAE0300C99408 /* ViewModel */,
+				DD88B12C2B9CA3A500C99408 /* View */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		DD88B12C2B9CA3A500C99408 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD88B12D2B9CA3B800C99408 /* DetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DD88B1312B9CAE0300C99408 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DD88B1322B9CAE1000C99408 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,15 +276,18 @@
 			files = (
 				DD704DE22B9C6358005EFDD6 /* NetworkingManager.swift in Sources */,
 				DD704DF12B9C702D005EFDD6 /* HomeView.swift in Sources */,
+				DD88B1302B9CA50700C99408 /* ProductImageView.swift in Sources */,
 				DD88B1252B9C8FEE00C99408 /* StarRatingView.swift in Sources */,
 				DD704DEF2B9C6C80005EFDD6 /* HomeViewModel.swift in Sources */,
 				DD704DE52B9C6568005EFDD6 /* ProductService.swift in Sources */,
 				DD704DE82B9C66B8005EFDD6 /* Product.swift in Sources */,
 				DD88B1232B9C8B7C00C99408 /* ProductRowView.swift in Sources */,
+				DD88B12E2B9CA3B800C99408 /* DetailView.swift in Sources */,
 				DD704DD52B9C5ECE005EFDD6 /* ContentView.swift in Sources */,
 				DD704DD32B9C5ECE005EFDD6 /* Check24OfflineTaskApp.swift in Sources */,
 				DD88B12A2B9C997D00C99408 /* WebView.swift in Sources */,
 				DD88B1272B9C96F900C99408 /* Color+Extension.swift in Sources */,
+				DD88B1332B9CAE1000C99408 /* DetailViewModel.swift in Sources */,
 				DD88B1212B9C7F8500C99408 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

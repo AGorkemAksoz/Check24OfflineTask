@@ -11,6 +11,7 @@ import Foundation
 
 final class HomeViewModel: ObservableObject {
     @Published var allProducts: [ProductElement]? = []
+    @Published var allAvailabelProducts: [ProductElement]? = []
     @Published var allHeaders: [Header]? = []
     
     private let productService = ProductService(networking: NetworkingManager())
@@ -34,6 +35,21 @@ final class HomeViewModel: ObservableObject {
                 self?.allHeaders?.append(headers)
             }
             .store(in: &cancellables)
+        
+        productService.$allProducts
+            .map { returnedArray -> [ProductElement]? in
+                guard let availabelProducts = returnedArray.first?.products?.filter({ product in
+                    product.available == true
+                }) else { return nil }
+                return availabelProducts
+            }
+            .sink { [weak self] availabelProducts in
+                guard let availabelProducts = availabelProducts else { return }
+                self?.allAvailabelProducts = availabelProducts
+            }
+            .store(in: &cancellables)
+
+            
     }
     
     func refreshData() async {

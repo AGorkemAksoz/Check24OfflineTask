@@ -10,7 +10,9 @@ import SwiftUI
 struct HomeView: View {
     @Environment(\.refresh) private var refresh
     @StateObject private var viewModel: HomeViewModel = HomeViewModel()
-    @State private var isCurrentlyRefreshing = false
+    @State private var isCurrentlyRefreshing: Bool = false
+    @State private var showAllProducts: Bool = true
+    @State private var showAvailabelProducts: Bool = false
     let amountToPullBeforeRefreshing: CGFloat = 180
     
     var body: some View {
@@ -21,9 +23,16 @@ struct HomeView: View {
                         .frame(height: UIScreen.main.bounds.height / 8)
                 }
                 LazyVStack(alignment: .leading) {
+                    filterSection
                     homeHeader
-                    ForEach(viewModel.allProducts ?? [], id: \.id) { product in
-                        ProductRowView(product: product)
+                    if showAllProducts {
+                        allProductsList
+                            .transition(.move(edge: .leading))
+                    }
+                    
+                    if showAvailabelProducts {
+                        allAvailabelProductsList
+                            .transition(.move(edge: .trailing))
                     }
                     footer
                 }
@@ -47,9 +56,9 @@ struct HomeView: View {
                     }
                 }
             }
+            .navigationTitle("Check24")
+            .navigationBarTitleDisplayMode(.large)
         }
-        .navigationTitle("Check24")
-        .navigationBarTitleDisplayMode(.large)
     }
 }
 
@@ -61,6 +70,73 @@ struct HomeView_Previews: PreviewProvider {
 
 // MARK: - Home View View Components
 extension HomeView {
+    
+    private var filterSection: some View {
+        HStack {
+            Spacer()
+            filterButton(for: .alle)
+            Spacer()
+            filterButton(for: .verfügbar)
+            Spacer()
+            filterButton(for: .vorgemerkt)
+            Spacer()
+        }
+        .padding(8)
+        .frame(maxWidth: .infinity)
+        .foregroundColor(.white)
+        .buttonStyle(.plain)
+        .background(Color.gray)
+        
+    }
+    
+    func filterButton(for option: FilterOptions) -> some View {
+        return Button(action: {
+            switch option {
+            case .alle:
+                // "Alle" durumu için yapılacak işlemler
+                withAnimation {
+                    showAllProducts = true
+                }
+                print("Alle seçildi")
+            case .verfügbar:
+                withAnimation {
+                    showAllProducts = false
+                    showAvailabelProducts = true
+
+                }
+                // "Verfügbar" durumu için yapılacak işlemler
+                print("Verfügbar seçildi")
+            case .vorgemerkt:
+                // "Vorgemerkt" durumu için yapılacak işlemler
+                print("Vorgemerkt seçildi")
+            }
+        }) {
+            Text(option.rawValue)
+        }
+    }
+    
+    private var allProductsList: some View {
+        ForEach(viewModel.allProducts ?? [], id: \.id) { product in
+            NavigationLink {
+                DetailView(product: product)
+            } label: {
+                ProductRowView(product: product)
+            }
+            .buttonStyle(.plain)
+        }
+    }
+    
+    private var allAvailabelProductsList: some View {
+        ForEach(viewModel.allAvailabelProducts ?? [], id: \.id) { product in
+            NavigationLink {
+                DetailView(product: product)
+            } label: {
+                ProductRowView(product: product)
+            }
+            .buttonStyle(.plain)
+        }
+    }
+    
     private var homeHeader: some View {
         VStack(alignment: .leading) {
             Text(viewModel.allHeaders?.first?.headerTitle ?? "Unknwon Title")
@@ -92,4 +168,10 @@ extension HomeView {
             value += nextValue()
         }
     }
+}
+
+enum FilterOptions: String {
+    case alle = "Alle"
+    case verfügbar = "Verfügbar"
+    case vorgemerkt = "Vorgemerkt"
 }

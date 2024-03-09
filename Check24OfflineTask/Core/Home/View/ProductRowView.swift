@@ -19,11 +19,11 @@ struct ProductRowView: View {
     var body: some View {
         HStack {
             if isAvailable {
-                imageOfProduct
+                ProductImageView(product: product)
                 bodyOfRow
             } else {
                 bodyOfRow
-                imageOfProduct
+                ProductImageView(product: product)
             }
         }
         .padding()
@@ -64,7 +64,6 @@ extension ProductRowView {
                     Text(product.price?.currency ?? "N/A")
                     Spacer()
                     StarRatingView(rating: product.rating ?? 0)
-                        .frame(width: 80)
                 }
                 .font(.subheadline)
                 .foregroundColor(.gray)
@@ -73,17 +72,5 @@ extension ProductRowView {
                     
             }
         }
-    }
-    
-    private var imageOfProduct: some View {
-        AsyncImage(url: URL(string: product.imageURL!)) { image in
-            image
-                .resizable()
-                .frame(width: 80, height: 80)
-        } placeholder: {
-            ProgressView()
-        }
-        .background(Color(hex: product.colorCode?.rawValue ?? "FFF"))
-
     }
 }
